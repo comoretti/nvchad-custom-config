@@ -47,6 +47,10 @@ local plugins = {
         "lukas-reineke/indent-blankline.nvim",
         opts = overrides.blankline,
     },
+    {
+        "lewis6991/gitsigns.nvim",
+        opts = overrides.gitsigns,
+    },
 
     -- Install a plugin
     -- {

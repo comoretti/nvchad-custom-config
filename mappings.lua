@@ -25,6 +25,7 @@ M.nvterm = {
 M.telescope = {
   n = {
     ["<leader>fc"] = { "<cmd> Telescope grep_string <CR>", "Find word under cursor" },
+    ["<leader>fr"] = { "<cmd> Telescope resume <CR>", "Resume last search" },
   },
 }
 M.tabufline = {
@@ -34,6 +35,16 @@ M.tabufline = {
                 require("nvchad.tabufline").closeOtherBufs()
             end,
             "Closes all buffers except current one",
+        },
+    }
+}
+M.lspconfig = {
+    n = {
+        ["<leader>cv"] = {
+            function()
+                vim.lsp.buf.code_action()
+            end,
+            "LSP code action",
         },
     }
 }

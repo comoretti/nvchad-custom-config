@@ -104,6 +104,15 @@ local plugins = {
             require "custom.configs.nvim-osc52"
         end,
         lazy = false,
+    },
+
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require "custom.configs.copilot"
+        end,
     }
 
     -- To make a plugin not be loaded

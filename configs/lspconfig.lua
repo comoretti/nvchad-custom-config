@@ -27,5 +27,19 @@ lspconfig["intelephense"].setup {
         licenceKey = get_intelephense_license()
     }
 }
+
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
+
+lspconfig["clangd"].setup {
+  on_attach = on_attach,
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+}
+
+
+
 -- 
 -- lspconfig.pyright.setup { blabla}

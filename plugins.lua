@@ -113,6 +113,14 @@ local plugins = {
         config = function()
             require "custom.configs.copilot"
         end,
+    },
+
+    {
+        "gbprod/yanky.nvim",
+        config = function()
+            require "custom.configs.yanky"
+        end,
+        lazy = false,
     }
 
     -- To make a plugin not be loaded

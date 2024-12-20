@@ -38,3 +38,13 @@ vim.g.clipboard = {
   paste = {['+'] = paste, ['*'] = paste},
 }
 
+-- Configura o yank para copiar para o clipboard do sistema
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        if vim.v.event.operator == "y" then
+            vim.fn.system('xclip -selection clipboard', vim.fn.getreg('"'))
+        end
+    end,
+    group = vim.api.nvim_create_augroup("YankToClipboard", { clear = true }),
+})
+
